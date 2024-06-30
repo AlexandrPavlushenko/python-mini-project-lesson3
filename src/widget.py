@@ -12,3 +12,7 @@ def mask_account_card(acc_card_number: str) -> str | None:
         return f"{acc_card_list[0]} {masks.get_mask_card_number(acc_card_list[-1])}"
     else:
         return None
+
+
+def get_data(data: str) -> str | None:
+    """Функция преобразования даты"""
