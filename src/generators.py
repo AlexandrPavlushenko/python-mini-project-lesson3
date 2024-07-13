@@ -6,10 +6,7 @@ def filter_by_currency(transactions, currency):
             transactions,
         )
     )
-    if len(filtered_transactions) != 0:
-        yield filtered_transactions
-    else:
-        return []
+    yield filtered_transactions
 
 
 def transaction_descriptions(transactions):
