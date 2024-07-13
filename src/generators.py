@@ -1,13 +1,8 @@
 def filter_by_currency(transactions, currency):
     """Функция возращает итератор транзакций по ключу currency"""
-    filtered_transactions = list(
-        filter(
-            lambda transaction: transaction.get("operationAmount").get("currency").get("code") == currency,
-            transactions,
-        )
-    )
-    yield filtered_transactions
-
+    for transaction in transactions:
+        if transaction.get("operationAmount").get("currency").get("code") == currency:
+            yield transaction
 
 def transaction_descriptions(transactions):
     """Функция принимает список словарей и возвращает описание каждой операции по очереди"""
