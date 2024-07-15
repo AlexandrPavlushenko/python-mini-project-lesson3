@@ -26,7 +26,7 @@ def log(filename=None):  # filename - имя файла для записи ло
 
 @log()
 def my_function(x, y):
-    return x + y
+    return x / y
 
 
 my_function(1, 2)
