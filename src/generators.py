@@ -4,6 +4,7 @@ def filter_by_currency(transactions, currency):
         if transaction.get("operationAmount").get("currency").get("code") == currency:
             yield transaction
 
+
 def transaction_descriptions(transactions):
     """Функция принимает список словарей и возвращает описание каждой операции по очереди"""
     for transaction in transactions:
