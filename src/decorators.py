@@ -27,7 +27,7 @@ def log(filename=None):  # filename - имя файла для записи ло
     return decorator
 
 
-@log('log_file')
+@log("log_file")
 def my_function(x, y):
     """Декорируемая функция"""
     return x + y
