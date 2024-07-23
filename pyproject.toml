@@ -20,8 +20,8 @@ isort = "^5.13.2"
 
 
 [tool.poetry.group.dev.dependencies]
-pytest = "^8.2.2"
 pytest-cov = "^5.0.0"
+pytest = "^8.3.1"
 
 [tool.mypy]
 disallow_untyped_defs = false
