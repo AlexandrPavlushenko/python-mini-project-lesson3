@@ -15,7 +15,7 @@ def conversion_to_rub(currency, amount):
         headers = {"apikey": apikey}
         response = requests.get(url, headers=headers)
         result = response.json()
-    except Exception as e:
+    except requests.exceptions.RequestException as e:
         print(f"Error: {e}")
         return 0
     return round(result.get("result"), 2)
