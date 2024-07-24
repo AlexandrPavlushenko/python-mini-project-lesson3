@@ -1,3 +1,5 @@
+import json
+
 import pytest
 
 
@@ -83,5 +85,57 @@ def list_transactions():
             "description": "Перевод организации",
             "from": "Visa Platinum 1246377376343588",
             "to": "Счет 14211924144426031657",
+        },
+    ]
+
+
+@pytest.fixture
+def sample_json_file(tmp_path):
+    data = [
+        {
+            "id": 441945886,
+            "state": "EXECUTED",
+            "date": "2019-08-26T10:50:58.294041",
+            "operationAmount": {"amount": "31957.58", "currency": {"name": "руб.", "code": "RUB"}},
+            "description": "Перевод организации",
+            "from": "Maestro 1596837868705199",
+            "to": "Счет 64686473678894779589",
+        }
+    ]
+    json_file = tmp_path / "sample.json"  # Создаем временный JSON файл
+    with open(json_file, "w") as f:
+        json.dump(data, f)
+    return json_file
+
+
+@pytest.fixture
+def list_dict():
+    return [
+        {
+            "id": 594226727,
+            "state": "CANCELED",
+            "date": "2018-09-12T21:27:25.241689",
+            "operationAmount": {"amount": "67314.70", "currency": {"name": "руб.", "code": "RUB"}},
+            "description": "Перевод организации",
+            "from": "Visa Platinum 1246377376343588",
+            "to": "Счет 14211924144426031657",
+        },
+        {
+            "id": 615064591,
+            "state": "CANCELED",
+            "date": "2018-10-14T08:21:33.419441",
+            "operationAmount": {"amount": "77751.04", "currency": {"name": "руб.", "code": "RUB"}},
+            "description": "Перевод с карты на счет",
+            "from": "Maestro 3928549031574026",
+            "to": "Счет 84163357546688983493",
+        },
+        {
+            "id": 147815167,
+            "state": "EXECUTED",
+            "date": "2018-01-26T15:40:13.413061",
+            "operationAmount": {"amount": "50870.71", "currency": {"name": "руб.", "code": "RUB"}},
+            "description": "Перевод с карты на счет",
+            "from": "Maestro 4598300720424501",
+            "to": "Счет 43597928997568165086",
         },
     ]
