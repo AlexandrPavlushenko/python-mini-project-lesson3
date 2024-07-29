@@ -2,6 +2,7 @@ import json
 
 from src.logger import setup_logging_utils
 
+
 logger = setup_logging_utils()
 
 
