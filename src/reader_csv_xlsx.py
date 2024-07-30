@@ -12,7 +12,7 @@ logger = setup_logging_reader_csv_xlsx()
 def get_data_csv(file_path: str) -> list[dict[str, str]] | Any:
     """function convert csv-file to list of dictionaries"""
     try:
-        with open(file_path, encoding='utf-8') as file:
+        with open(file_path, encoding="utf-8") as file:
             data = csv.DictReader(file, delimiter=";")
             logger.info("OK File read")
             return [row for row in data]
