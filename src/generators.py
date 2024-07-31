@@ -13,7 +13,6 @@ def transaction_descriptions(transactions):
 
 def card_number_generator(start, stop):
     """Генератор номеров карт в заданном параметре"""
-
     for number in range(start, stop + 1):
         number_str = f"{number:016}"
         formatted_number = f"{number_str[:4]} {number_str[4:8]} {number_str[8:12]} {number_str[12:]}"
