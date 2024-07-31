@@ -49,7 +49,6 @@ def test_log_exception(capsys):
 
 def test_log_exception_file_log(capsys):
     """Тест записb в файл после ошибки"""
-
     with tempfile.NamedTemporaryFile(delete=False) as tmp_file:
         log_file_path = tmp_file.name
 

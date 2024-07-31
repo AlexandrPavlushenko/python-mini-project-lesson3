@@ -1,12 +1,12 @@
 import os
 
 import requests
+
 from dotenv import load_dotenv
 
 
 def conversion_to_rub(currency, amount):
     """Функция конвертации валюты в рубли"""
-
     try:
         url = f"https://api.apilayer.com/exchangerates_data/convert?to=RUB&from={currency}&amount={amount}"
         load_dotenv("../.env")
