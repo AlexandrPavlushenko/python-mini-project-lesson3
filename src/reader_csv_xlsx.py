@@ -1,8 +1,8 @@
 import csv
 
-import pandas as pd
-
 from typing import Any
+
+import pandas as pd
 
 from src.logger import setup_logging_reader_csv_xlsx
 
